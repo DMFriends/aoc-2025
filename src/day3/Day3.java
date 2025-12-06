@@ -22,7 +22,7 @@ public class Day3
 				maxJoltage += largest;
 			}
 			
-			System.out.println("The password is " + maxJoltage);
+			System.out.println("The answer is " + maxJoltage);
 		}
 		catch (FileNotFoundException ex)
 		{

@@ -61,7 +61,7 @@ public class Day5Part2
 
 		numFreshIDs = countFreshIDs();
 		
-		System.out.println("The password is " + numFreshIDs);
+		System.out.println("The answer is " + numFreshIDs);
 	}
 	
 	public static long countFreshIDs()

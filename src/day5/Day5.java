@@ -69,7 +69,7 @@ public class Day5
 			    }
 			}
 			
-			System.out.println("The password is " + numFreshIDs);
+			System.out.println("The answer is " + numFreshIDs);
 		}
 		catch (FileNotFoundException ex)
 		{

@@ -78,12 +78,7 @@ public class Day4
 				}
 			}
 			
-			for(ArrayList<String> r : puzzleDiagram)
-		    {
-		    	System.out.println(r);
-		    }
-			
-			System.out.println("The password is " + numRolls);
+			System.out.println("The answer is " + numRolls);
 		}
 		catch (FileNotFoundException ex)
 		{

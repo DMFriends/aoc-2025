@@ -92,7 +92,7 @@ public class Day4Part2
 		    	System.out.println(r);
 		    }
 			
-			System.out.println("The password is " + numRolls);
+			System.out.println("The answer is " + numRolls);
 		}
 		catch (FileNotFoundException ex)
 		{

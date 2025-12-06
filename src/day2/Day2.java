@@ -36,7 +36,7 @@ public class Day2
 				sum += i;
 			}								
 			
-			System.out.println("The password is " + sum);
+			System.out.println("The answer is " + sum);
 		}
 		catch (FileNotFoundException ex)
 		{
