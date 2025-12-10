@@ -1,12 +1,11 @@
-package day8;
+package day08;
 
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class Day8
+public class Day8Part2
 {
 	static ArrayList<ArrayList<Integer>> coords = new ArrayList<ArrayList<Integer>>();
 	static ArrayList<ArrayList<ArrayList<Integer>>> circuits = new ArrayList<ArrayList<ArrayList<Integer>>>();
@@ -50,12 +49,11 @@ public class Day8
 	{
 	    int n = coords.size();
 	    int[] parent = new int[n];
-
 	    for (int i = 0; i < n; i++)
 	    {
 	        parent[i] = i;
 	    }
-
+	    
 	    ArrayList<Edge> edges = new ArrayList<>();
 	    for (int i = 0; i < n; i++)
 	    {
@@ -68,23 +66,23 @@ public class Day8
 	    
 	    edges.sort((a, b) -> Double.compare(a.distance, b.distance));
 	    
-	    for (int k = 0; k < Math.min(1000, edges.size()); k++)
+	    int lastBox1 = -1;
+	    int lastBox2 = -1;
+	    
+	    for (Edge e : edges)
 	    {
-	        Edge e = edges.get(k);
-	        union(parent, e.box1, e.box2);
+	        if (find(parent, e.box1) != find(parent, e.box2))
+	        {
+	            union(parent, e.box1, e.box2);
+	            lastBox1 = e.box1;
+	            lastBox2 = e.box2;
+	        }
 	    }
 	    
-	    HashMap<Integer, Integer> groups = new HashMap<>();
-	    for (int i = 0; i < n; i++)
-	    {
-	        int root = find(parent, i);
-	        groups.put(root, groups.getOrDefault(root, 0) + 1);
-	    }
+	    long x1 = coords.get(lastBox1).get(0);
+	    long x2 = coords.get(lastBox2).get(0);
 	    
-	    ArrayList<Integer> sizes = new ArrayList<>(groups.values());
-	    sizes.sort((a, b) -> b - a);
-	    
-	    int result = sizes.get(0) * sizes.get(1) * sizes.get(2);
+	    long result = x1 * x2;
 	    System.out.println("The answer is " + result);
 	}
 

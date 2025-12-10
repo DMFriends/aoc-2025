@@ -1,11 +1,11 @@
-package day2;
+package day02;
 
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class Day2Part2
+public class Day2
 {
 	static ArrayList<Long> invalidIDs = new ArrayList<Long>();
 	static long sum = 0;
@@ -50,33 +50,17 @@ public class Day2Part2
 	    String numStr = Long.toString(num);
 	    int len = numStr.length();
 	    
-	    // Try all possible pattern lengths from 1 to half the string length
-	    for (int patternLen = 1; patternLen <= len / 2; patternLen++)
+	    // The number must have even length to be split into two equal halves
+	    if (len % 2 != 0)
 	    {
-	        // Only check if the pattern could repeat evenly
-	        if (len % patternLen == 0)
-	        {
-	            String pattern = numStr.substring(0, patternLen);
-	            boolean matches = true;
-	            
-	            // Check if this pattern repeats throughout the entire number
-	            for (int i = patternLen; i < len; i += patternLen)
-	            {
-	                String nextSegment = numStr.substring(i, i + patternLen);
-	                if (!pattern.equals(nextSegment))
-	                {
-	                    matches = false;
-	                    break;
-	                }
-	            }
-	            
-	            if (matches)
-	            {
-	                return true;
-	            }
-	        }
+	        return false;
 	    }
 	    
-	    return false;
+	    int halfLen = len / 2;
+	    String firstHalf = numStr.substring(0, halfLen);
+	    String secondHalf = numStr.substring(halfLen);
+	    
+	    // Check if the two halves are identical
+	    return firstHalf.equals(secondHalf);
 	}
 }

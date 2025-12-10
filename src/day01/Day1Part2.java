@@ -1,10 +1,10 @@
-package day1;
+package day01;
 
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class Day1
+public class Day1Part2
 {
 	static int countZeros = 0;
 	static int currentNumber = 50;
@@ -21,11 +21,25 @@ public class Day1
 				
 				if(combo.substring(0, 1).equals("L"))
 				{
-					updateComboLeft(combo, index);
+					for(int i = 0; i < index; i++)
+					{
+                        currentNumber = ((currentNumber - 1) % 100);
+                        if (currentNumber == 0)
+                        {
+                            countZeros++;
+                        }
+                    }
 				}
 				else if(combo.substring(0, 1).equals("R"))
 				{
-					updateComboRight(combo, index);
+					for(int i = 0; i < index; i++)
+					{
+                        currentNumber = ((currentNumber + 1) % 100);
+                        if (currentNumber == 0)
+                        {
+                            countZeros++;
+                        }
+                    }
 				}
 			}
 			
