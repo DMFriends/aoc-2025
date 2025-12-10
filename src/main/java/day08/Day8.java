@@ -13,8 +13,8 @@ public class Day8
 	
 	public static void main(String[] args)
 	{
-		try (Scanner input = new Scanner(new File("./src/day8/input.txt")))
-		//try (Scanner input = new Scanner(new File("./src/day8/input_test.txt")))
+		try (Scanner input = new Scanner(new File("./src/main/java/day08/input.txt")))
+		//try (Scanner input = new Scanner(new File("./src/main/java/day08/input_test.txt")))
 		{
 			while(input.hasNextLine())
 			{
