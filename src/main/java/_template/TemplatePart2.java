@@ -9,8 +9,8 @@ public class TemplatePart2
 {
 	public static void main(String[] args)
 	{
-		try (Scanner input = new Scanner(new File("./src/day3/input.txt")))
-		//try (Scanner input = new Scanner(new File("./src/day3/input_test.txt")))
+		try (Scanner input = new Scanner(new File("./src/main/java/day01/input.txt")))
+		//try (Scanner input = new Scanner(new File("./src/main/java/day01/input_test.txt")))
 		{
 			
 		}
