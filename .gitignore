@@ -1,3 +1,8 @@
 *input.txt
 *input_test.txt
-bin/
+/bin/
+/target/
+/.settings/
+*pom.xml
+*.classpath
+*.project
