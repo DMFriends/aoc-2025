@@ -1,8 +1,9 @@
 *input.txt
 *input_test.txt
-/bin/
-/target/
-/.settings/
 *pom.xml
 *.classpath
 *.project
+/bin/
+/target/
+/.settings/
+/src/main/java/_template
